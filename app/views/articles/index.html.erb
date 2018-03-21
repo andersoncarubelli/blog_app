@@ -8,7 +8,7 @@
       <%= link_to article.title, article_path(article) %>
     </div>
     <div class="article-body">
-      <%= truncate(article.body, lenght: 500) %>
+      <%= article.body %>
     </div>
   </div>
   <% end %>
