@@ -9,6 +9,10 @@
     </div>
     <div class="article-body">
       <%= article.body %>
+
+      <div class="author">
+          <small>Created by: <%= article.user.email %></small>
+      </div>
     </div>
   </div>
   <% end %>
