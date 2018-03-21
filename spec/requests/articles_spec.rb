@@ -15,7 +15,7 @@ RSpec.describe 'Articles', type: :request do
     end
 
     context 'with on-existing article' do
-      before { get "/article/xxxx" }
+      before { get "/articles/xxxx" }
 
       it 'handles non-existing article' do
         expect(response.status).to eq 302
