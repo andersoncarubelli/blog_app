@@ -20,7 +20,7 @@ RSpec.feature 'Showing article' do
   end
 
   scenario 'to non-owner hide the edit and delete buttons' do
-    login_as (@fred)
+    login_as(@fred)
     visit '/'
 
     click_link @article.title
@@ -30,5 +30,18 @@ RSpec.feature 'Showing article' do
 
     expect(page).not_to have_link('Edit Article')
     expect(page).not_to have_link('Delete Article')
+  end
+
+  scenario 'to owner show the edit and delete buttons' do
+    login_as(@john)
+    visit '/'
+
+    click_link @article.title
+    expect(page).to have_content(@article.title)
+    expect(page).to have_content(@article.body)
+    expect(current_path).to eq article_path(@article)
+
+    expect(page).to have_link('Edit article')
+    expect(page).to have_link('Delete article')
   end
 end
