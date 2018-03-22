@@ -24,7 +24,7 @@ module BlogApp
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-
+    config.action_cable.mount_path = '/cable'
     # Don't generate system test files.
     config.generators.system_tests = nil
   end
